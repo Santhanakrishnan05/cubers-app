@@ -34,6 +34,7 @@ if (!GEMINI_API_KEY && !GROQ_API_KEY) {
 const app = express();
 const httpServer = createServer(app);
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+const BACKEND_URL = process.env.VITE_BACKEND_URL || `http://localhost:${PORT}`;
 
 app.use(cors({
   origin: [FRONTEND_URL, 'http://localhost:5173'],
@@ -121,7 +122,7 @@ app.post('/api/upload', upload.single('avatar'), (req, res) => {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
-  const BACKEND_URL = process.env.BACKEND_URL || `http://localhost:${PORT}`;
+  
   const fileUrl = `${BACKEND_URL}/uploads/${req.file.filename}`;
   //const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
   res.json({
