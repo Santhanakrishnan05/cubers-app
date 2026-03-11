@@ -4,6 +4,8 @@ import { FileText, Download, User } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import Avatar from '../components/Avatar';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const History = () => {
   const navigate = useNavigate();
   const {
@@ -54,7 +56,7 @@ const History = () => {
   useEffect(() => {
     if (selectedRoom) {
       // Fetch fresh room data from backend
-      fetch(`http://localhost:5000/api/rooms/${selectedRoom.id}`)
+      fetch(`${BACKEND_URL}/api/rooms/${selectedRoom.id}`)
         .then(res => res.json())
         .then(result => {
           if (result.success) {
@@ -166,7 +168,7 @@ const History = () => {
                   selectedRoom.documents.map((doc, idx) => (
                     <a 
                       key={idx} 
-                      href={`http://localhost:5000${doc.url}`} 
+                      href={`${BACKEND_URL}${doc.url}`} 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-3 rounded-xl bg-slate-700 text-white text-sm hover:bg-slate-600 transition flex items-center gap-2 group"
@@ -193,7 +195,7 @@ const History = () => {
                 <>
                   <audio
                     ref={audioRef}
-                    src={`http://localhost:5000${selectedRoom.recording.url}`}
+                    src={`${BACKEND_URL}${selectedRoom.recording.url}`}
                     preload="auto"
                     onLoadedMetadata={() => {
                       const dur = getReliableDuration();
@@ -288,7 +290,7 @@ const History = () => {
 
                     {/* Download button */}
                     <a
-                      href={`http://localhost:5000${selectedRoom.recording.url}`}
+                      href={`${BACKEND_URL}${selectedRoom.recording.url}`}
                       download={`recording-${selectedRoom.id}.webm`}
                       className="w-10 h-10 flex-shrink-0 rounded-full bg-white flex items-center justify-center hover:bg-slate-200 transition"
                     >
@@ -315,7 +317,7 @@ const History = () => {
                     onClick={async () => {
                       setIsSummarizing(true);
                       try {
-                        const response = await fetch(`http://localhost:5000/api/rooms/${selectedRoom.id}/summarize`, {
+                        const response = await fetch(`${BACKEND_URL}/api/rooms/${selectedRoom.id}/summarize`, {
                           method: 'POST'
                         });
                         const result = await response.json();
@@ -326,7 +328,7 @@ const History = () => {
                             pollTimerRef.current = setInterval(async () => {
                               attempts++;
                               try {
-                                const pollRes = await fetch(`http://localhost:5000/api/rooms/${selectedRoom.id}`);
+                                const pollRes = await fetch(`${BACKEND_URL}/api/rooms/${selectedRoom.id}`);
                                 const pollResult = await pollRes.json();
                                 if (pollResult.success && pollResult.room.summary && !pollResult.room.summary.includes('Recording not yet uploaded')) {
                                   clearInterval(pollTimerRef.current);

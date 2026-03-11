@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { User } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const Profile = () => {
   const navigate = useNavigate();
   const {
@@ -36,7 +38,7 @@ const Profile = () => {
 
     try {
       // Send update to backend
-      const response = await fetch(`http://localhost:5000/api/users/${currentUser.id}`, {
+      const response = await fetch(`${BACKEND_URL}/api/users/${currentUser.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X } from 'lucide-react';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 import { useSocket } from './context/SocketContext';
 import { useApp } from './context/AppContext';
 
@@ -30,7 +32,7 @@ const YouTube = ({ onClose, roomId }) => {
     try {
       // Call backend API to search YouTube directly
       const response = await fetch(
-        `http://localhost:5000/api/youtube/search?q=${encodeURIComponent(query)}`
+        `${BACKEND_URL}/api/youtube/search?q=${encodeURIComponent(query)}`
       );
 
       const result = await response.json();

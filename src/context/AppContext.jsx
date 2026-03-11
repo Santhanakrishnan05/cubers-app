@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
 // Temporary JSON storage
 const initialData = {
   users: [
@@ -124,8 +124,8 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     // Fetch all data from backend
     Promise.all([
-      fetch('http://localhost:5000/api/users').then(res => res.json()),
-      fetch('http://localhost:5000/api/rooms').then(res => res.json())
+      fetch(`${BACKEND_URL}/api/users`).then(res => res.json()),
+      fetch(`${BACKEND_URL}/api/rooms`).then(res => res.json())
     ])
       .then(([usersResult, roomsResult]) => {
         if (usersResult.success && roomsResult.success) {
@@ -161,7 +161,7 @@ export const AppProvider = ({ children }) => {
     const fetchRooms = () => {
       // Use the user-specific endpoint to get rooms they participated in
       const endpoint = `/api/user-room-history/${currentUser.id}`;
-      fetch(`http://localhost:5000${endpoint}`)
+      fetch(`${BACKEND_URL}${endpoint}`)
         .then(res => res.json())
         .then(result => {
           if (result.success) {
@@ -190,7 +190,7 @@ export const AppProvider = ({ children }) => {
     formData.append('avatar', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload', {
+      const response = await fetch(`${BACKEND_URL}/api/upload`, {
         method: 'POST',
         body: formData
       });
@@ -224,7 +224,7 @@ export const AppProvider = ({ children }) => {
     formData.append('fileName', file.name);
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload-document', {
+      const response = await fetch(`${BACKEND_URL}/api/upload-document`, {
         method: 'POST',
         body: formData
       });
@@ -257,7 +257,7 @@ export const AppProvider = ({ children }) => {
 
         // Save to backend - wait for confirmation
         console.log('Sending update request with roomId:', selectedRoom.id, 'and', updatedRoom.documents.length, 'documents');
-        const updateResponse = await fetch('http://localhost:5000/api/rooms/update', {
+        const updateResponse = await fetch(`${BACKEND_URL}/api/rooms/update`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -287,7 +287,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       const filename = docUrl.split('/').pop();
-      const response = await fetch(`http://localhost:5000/api/documents/${selectedRoom.id}/${filename}`, {
+      const response = await fetch(`${BACKEND_URL}/api/documents/${selectedRoom.id}/${filename}`, {
         method: 'DELETE'
       });
 
@@ -324,7 +324,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       // Call backend API
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch(`${BACKEND_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: loginEmail, password: loginPassword })
@@ -358,7 +358,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       // Call backend API to register
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch(`${BACKEND_URL}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -405,7 +405,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       // Call backend API to create room
-      const response = await fetch('http://localhost:5000/api/rooms', {
+      const response = await fetch(`${BACKEND_URL}/api/rooms`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -448,7 +448,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       // Fetch all rooms from backend to find the room by code
-      const response = await fetch('http://localhost:5000/api/rooms');
+      const response = await fetch(`${BACKEND_URL}/api/rooms`);
       const result = await response.json();
       
       if (!result.success || !result.rooms) {
@@ -483,7 +483,7 @@ export const AppProvider = ({ children }) => {
         };
         
         // Update backend first
-        const updateResponse = await fetch(`http://localhost:5000/api/rooms/${room.id}`, {
+        const updateResponse = await fetch(`${BACKEND_URL}/api/rooms/${room.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -555,7 +555,7 @@ export const AppProvider = ({ children }) => {
 
   const handleTerminateRoom = async (roomId, endTime, actualEndTime, duration) => {
     try {
-      const response = await fetch('http://localhost:5000/api/rooms/terminate', {
+      const response = await fetch(`${BACKEND_URL}/api/rooms/terminate`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

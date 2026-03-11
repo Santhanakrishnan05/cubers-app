@@ -8,6 +8,8 @@ import Whiteboard from '../Whiteboard';
 import YouTube from '../YouTube';
 import Avatar from '../components/Avatar';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const ActiveRoom = () => {
   const { roomId } = useParams();
   const navigate = useNavigate();
@@ -134,7 +136,7 @@ const ActiveRoom = () => {
       formData.append('roomId', currentRoomId);
       formData.append('duration', durationToUpload || recordingDuration || '0:00:00');
 
-      const response = await fetch('http://localhost:5000/api/upload-recording', {
+      const response = await fetch(`${BACKEND_URL}/api/upload-recording`, {
         method: 'POST',
         body: formData
       });
@@ -628,7 +630,7 @@ const ActiveRoom = () => {
                 >
                   <FileText className="w-3 h-3" />
                   <a 
-                    href={`http://localhost:5000${doc.url}`} 
+                    href={`${BACKEND_URL}${doc.url}`} 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline cursor-pointer max-w-[120px] truncate"

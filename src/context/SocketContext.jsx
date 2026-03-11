@@ -5,6 +5,7 @@ import { useApp } from './AppContext';
 const SocketContext = createContext();
 
 export const SocketProvider = ({ children }) => {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
   const { currentUser, selectedRoom, setCurrentYoutubeVideo } = useApp();
   const [socket, setSocket] = useState(null);
   const currentRoomRef = useRef(null);
@@ -12,7 +13,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (currentUser) {
       // Initialize socket connection
-      const newSocket = io('http://localhost:5000', {
+      const newSocket = io(BACKEND_URL, {
         transports: ['polling', 'websocket'],
         reconnectionAttempts: 10,
         reconnectionDelay: 1000
