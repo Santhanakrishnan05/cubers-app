@@ -1,0 +1,276 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Santhana Krishnan J",
+      "email": "santhanakrishnan02065@gmail.com",
+      "phone": "+91 8838658734",
+      "password": "Krish@123",
+      "avatar": null,
+      "createdAt": "2026-01-24"
+    },
+    {
+      "id": 2,
+      "name": "selva nayagi",
+      "email": "nayagi@gmail.com",
+      "phone": "987654321",
+      "password": "nayagi@123",
+      "avatar": "http://localhost:5000/uploads/avatar-1769234436210-421100366.png",
+      "createdAt": "2026-01-24"
+    },
+    {
+      "id": 3,
+      "name": "madan",
+      "email": "madan@gmail.com",
+      "phone": "543212345",
+      "password": "madan@123",
+      "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg",
+      "createdAt": "2026-01-24"
+    },
+    {
+      "id": 4,
+      "name": "mass",
+      "email": "mass@gmail.com",
+      "phone": "0987678909",
+      "password": "mass@123",
+      "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+      "createdAt": "2026-01-24"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "9GUMT1",
+      "name": "classs started",
+      "hostId": 3,
+      "startTime": "11:41:58 AM",
+      "endTime": "11:44:38 AM",
+      "date": "3/8/2026",
+      "duration": "00:02:39",
+      "participantCount": 2,
+      "participants": [
+        {
+          "id": 3,
+          "name": "madan",
+          "isHost": true,
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg"
+        },
+        {
+          "id": 4,
+          "name": "mass",
+          "isHost": false
+        }
+      ],
+      "messages": [],
+      "documents": [],
+      "recording": {
+        "url": "/uploads/recordings/recording-1772950477745-727795183.webm",
+        "duration": "0:02:35",
+        "currentTime": "0:00:00",
+        "size": 2359407,
+        "uploadedAt": "2026-03-08T06:14:38.113Z"
+      },
+      "summary": "=== AI-Generated Meeting Summary (Groq) ===\n\n## Meeting Summary: \"classs started\"\n### Meeting Details\n- Date: 3/8/2026\n- Host: madan\n- Participants: madan, mass\n- Duration: 00:00:00\n\n### Main Topics Discussed\nThe main topic discussed in the meeting was the process of downloading MySQL on a Mac operating system.\n\n### Key Points and Decisions Made\n- The participants were guided to visit the mysql.com website.\n- They were instructed to navigate to the Downloads tab and locate the MySQL server download.\n- Both the server and workbench were identified as necessary downloads.\n- The process of downloading and installing the server was explained, including double-clicking on the downloaded .dmg archive.\n\n### Action Items\n- Participants were expected to download the MySQL server and workbench from the official MySQL website.\n- They were to follow the installation instructions provided during the meeting.\n\n### Brief Overall Summary\nThe meeting, titled \"classs started,\" focused on explaining the steps to download and install MySQL on a Mac operating system. The host, madan, walked the participants through the process, emphasizing the need for both the server and workbench components. Despite the meeting duration being listed as 00:00:00, the transcript indicates a structured tutorial was provided.\n\n=== Full Transcript ===\n\n Dr Tuch, how often does he make it for his work Hello Hello Hello Allo? I like new kilowatt around here. All right, how's that, you guys! Thank you Alright everybody in this topic I going to explain how we can download MySQL using the Mac operating system. First, onto this URL, mysql.com. We will go to the Downloads tab. Scroll down and look for mysql.com. We will need both the server and the workbench. but let's start with the server click on this file click on this link let's see if we are having finished downloading we can double click on it double click on the dmg archive allow",
+      "createdAt": "2026-03-08T06:11:58.901Z",
+      "actualStartTime": "2026-03-08T06:11:58.901Z",
+      "isActive": false,
+      "terminatedAt": "2026-03-08T06:14:38.177Z",
+      "transcript": " Dr Tuch, how often does he make it for his work Hello Hello Hello Allo? I like new kilowatt around here. All right, how's that, you guys! Thank you Alright everybody in this topic I going to explain how we can download MySQL using the Mac operating system. First, onto this URL, mysql.com. We will go to the Downloads tab. Scroll down and look for mysql.com. We will need both the server and the workbench. but let's start with the server click on this file click on this link let's see if we are having finished downloading we can double click on it double click on the dmg archive allow"
+    },
+    {
+      "id": "N7PX0J",
+      "name": "inime namma dhan",
+      "hostId": 3,
+      "startTime": "11:57:21 AM",
+      "endTime": "",
+      "date": "3/8/2026",
+      "duration": "00:00:00",
+      "participantCount": 2,
+      "participants": [
+        {
+          "id": 3,
+          "name": "madan",
+          "isHost": true,
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg"
+        },
+        {
+          "id": 4,
+          "name": "mass",
+          "isHost": false,
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg"
+        }
+      ],
+      "messages": [
+        {
+          "id": 1,
+          "userId": 3,
+          "userName": "madan",
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg",
+          "message": "hello",
+          "timestamp": "2026-03-08T06:27:26.896Z"
+        },
+        {
+          "id": 2,
+          "userId": 4,
+          "userName": "mass",
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+          "message": "hello da",
+          "timestamp": "2026-03-08T06:29:14.959Z"
+        },
+        {
+          "id": 3,
+          "userId": 4,
+          "userName": "mass",
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+          "message": "epdi irukka",
+          "timestamp": "2026-03-08T06:29:18.123Z"
+        },
+        {
+          "id": 4,
+          "userId": 3,
+          "userName": "madan",
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg",
+          "message": "im fine da",
+          "timestamp": "2026-03-08T06:29:29.997Z"
+        },
+        {
+          "id": 5,
+          "userId": 3,
+          "userName": "madan",
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg",
+          "message": "you",
+          "timestamp": "2026-03-08T06:29:31.213Z"
+        },
+        {
+          "id": 6,
+          "userId": 4,
+          "userName": "mass",
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+          "message": "hmm ",
+          "timestamp": "2026-03-08T06:29:39.001Z"
+        },
+        {
+          "id": 7,
+          "userId": 4,
+          "userName": "mass",
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+          "message": "let's learn about technical today",
+          "timestamp": "2026-03-08T06:30:09.054Z"
+        }
+      ],
+      "documents": [],
+      "recording": {
+        "duration": "0:00:00",
+        "currentTime": "0:00:00"
+      },
+      "summary": "Meeting: \"inime namma dhan\"\nDate: 3/8/2026\nDuration: 00:00:00\nHost: madan\nParticipants (2): madan, mass\n\nChat Messages: 7\nDocuments Shared: 0\n\n⚠️ AI transcription was unavailable (No recording available).\nThe recording is available for manual playback in the history section.",
+      "createdAt": "2026-03-08T06:27:21.317Z",
+      "actualStartTime": "2026-03-08T06:27:21.317Z"
+    },
+    {
+      "id": "CTE809",
+      "name": "namma dhana?",
+      "hostId": 3,
+      "startTime": "12:07:32 PM",
+      "endTime": "12:14:37 PM",
+      "date": "3/8/2026",
+      "duration": "00:07:04",
+      "participantCount": 2,
+      "participants": [
+        {
+          "id": 3,
+          "name": "madan",
+          "isHost": true,
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg"
+        },
+        {
+          "id": 4,
+          "name": "mass",
+          "isHost": false,
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg"
+        }
+      ],
+      "messages": [
+        {
+          "id": 1,
+          "userId": 4,
+          "userName": "mass",
+          "avatar": "http://localhost:5000/uploads/avatar-1769264669487-545948015.jpg",
+          "message": "hello",
+          "timestamp": "2026-03-08T06:37:53.474Z"
+        },
+        {
+          "id": 2,
+          "userId": 3,
+          "userName": "madan",
+          "avatar": "http://localhost:5000/uploads/avatar-1769253381126-889617132.jpg",
+          "message": "hii",
+          "timestamp": "2026-03-08T06:38:05.889Z"
+        }
+      ],
+      "documents": [
+        {
+          "name": "Register page (1).pdf",
+          "type": "pdf",
+          "url": "/uploads/1772952195657-472170949-Register page (1).pdf",
+          "uploadedAt": "2026-03-08T06:43:15.795Z",
+          "size": 446143
+        },
+        {
+          "name": "Screenshot 2024-10-09 205840.png",
+          "type": "png",
+          "url": "/uploads/1772952209424-359294471-Screenshot 2024-10-09 205840.png",
+          "uploadedAt": "2026-03-08T06:43:29.568Z",
+          "size": 341697
+        },
+        {
+          "name": "Screenshot 2024-10-11 093425.png",
+          "type": "png",
+          "url": "/uploads/1772952219299-980666976-Screenshot 2024-10-11 093425.png",
+          "uploadedAt": "2026-03-08T06:43:39.468Z",
+          "size": 207425
+        },
+        {
+          "name": "Screenshot 2024-11-08 221452.png",
+          "type": "png",
+          "url": "/uploads/1772952237438-485747440-Screenshot 2024-11-08 221452.png",
+          "uploadedAt": "2026-03-08T06:43:57.555Z",
+          "size": 84346
+        },
+        {
+          "name": "Screenshot 2024-10-09 205913.png",
+          "type": "png",
+          "url": "/uploads/1772952245434-86828180-Screenshot 2024-10-09 205913.png",
+          "uploadedAt": "2026-03-08T06:44:05.551Z",
+          "size": 342698
+        },
+        {
+          "name": "Screenshot 2024-10-18 200831.png",
+          "type": "png",
+          "url": "/uploads/1772952255192-650639510-Screenshot 2024-10-18 200831.png",
+          "uploadedAt": "2026-03-08T06:44:15.283Z",
+          "size": 327751
+        },
+        {
+          "name": "Screenshot 2024-11-12 225656.png",
+          "type": "png",
+          "url": "/uploads/1772952263790-538256910-Screenshot 2024-11-12 225656.png",
+          "uploadedAt": "2026-03-08T06:44:23.932Z",
+          "size": 278985
+        }
+      ],
+      "recording": {
+        "url": "/uploads/recordings/recording-1772952276654-529746730.webm",
+        "duration": "0:06:59",
+        "currentTime": "0:00:00",
+        "size": 6687654,
+        "uploadedAt": "2026-03-08T06:44:36.844Z"
+      },
+      "summary": "=== AI-Generated Meeting Summary (Groq) ===\n\n## Meeting Summary\n### Meeting Details\n- Meeting Name: namma dhana?\n- Date: 3/8/2026\n- Duration: 00:07:04\n- Host: madan\n- Participants: madan, mass\n\n## Main Topics Discussed\nThe main topics discussed during the meeting appear to be unrelated and lack a clear, cohesive theme. However, several key points can be identified:\n- A discussion about research, projects, and possibly an academic or professional setting.\n- A conversation about survival, possibly in a wilderness or challenging environment, with references to camping and shelters.\n- A mention of a competition or challenge where participants are eliminated, with a grand prize of $250,000.\n\n## Key Points and Decisions Made\n- The decision to eliminate a participant in a competition, with the reason being a comment about being \"rewarded for being a cheater.\"\n- The mention of a secret that allows remaining participants to steal money from another participant.\n- The discussion about the challenges of living in a wilderness setting for an extended period.\n\n## Action Items\nThere are no clear action items identified in the meeting transcript. The conversation seems to be more focused on discussing current events and decisions rather than assigning tasks or responsibilities.\n\n## Brief Overall Summary\nThe meeting transcript appears to be a collection of unrelated conversations and discussions. The topics range from academic and professional settings to survival challenges and competitions. The meeting lacks a clear structure and cohesive theme, making it challenging to provide a concise summary. However, the key points and decisions made during the meeting have been identified and summarized above.\n\n=== Full Transcript ===\n\n After the title, I must internationally agree with my $1 on research, we have managed to take a less moneyую and complete division. In this post and process, I learnt based on research and the various projects... we the next one for asking the third student, as weWhat you or zou capacity, I was just a lambed lecture and I said maybe one week long there came a home lot from C Hopkins. Conservancy, I had two students responsibly and I returned here's work, This is very unrujus from theduction See you then. Thanks so much for deciding make sure this will be on the Mars Ankita University of כleistina. Gngu Prof. 30 Gngu Prof. україн supports oh i Yeah At the end of 30 days we flip at You should probably go straight to the other side Nice to see you guys All right I bought a new phone not that I out there I gonna just pretend I out here alone Did anyone have anything nice to say about that? We did like write me a song. They sang me a song. We wrote me a song and then played the tour on the other level. I'm just gonna focus on surviving as best I can out here. Well, I don't like a player call himself. All the X's are awesome. I don't know. I don't know. Guys, don't leave that. We still have a little bit of a conversation. Because of it. We're out keeping it into the night. It takes time to get paid. This is why I think the women are scared. I don't think that's why you're scared. This can't be an end source right now. Yeah, you're about to get this work. So what are you going to do today? Nothing with you. Absolutely nothing to talk. Why are you so mad? Like I'm not afraid to make this work out. How about this and don't be again? I don't want to. I didn't know, but this would be one of the most intense for the history I've ever seen. I'm out there, but there was never a part where I was going to be a part of this. This is one of the most important things. You guys are a little bit like me and I can't stop you. This is your last grand time. How about you? You were the most disgusting man. Yeah, I love you. They've watched a bunch. How was the first time, everybody? Having a great time. Yeah. To celebrate 24 hours in the woods, I have a secret for each side. I'm scared. I'm a figure out every five days. You have to have the ability to sell money around. It's just one left. What I was about to tell you, he has no idea. The secret for the five of you is whatever X's are left at the end can just choose to steal the money from Grant sitting alone with nothing I love that This is kind of awesome On the morning of day three Ray got up next door and immediately got to work in the shelter. As you can imagine, the girls were the first time. Ray, you're on a tent. You don't need to go to the house. You're on a tent. The girl said I don't need to go to the house because I have a tent. I say I'm driving for a month. It's about to get cold. the appeal to camping and i want to say i still don't i don't know how i'll find out that because everyone here works out with us and i take apps for fun jimmy has kind of set this up where i'm having to live in the mess that i've made most people don't get to have all their mistakes in one place for 30 days it's day five mr beast is coming today it is elimination day and i have to choose who i'm sending home come on over there's hard stuff right you're on this side you know where the hammer is oh wow he's gonna hammer apart i'm sorry i'm mad in your life you always got something up your sleeve this one's the ball every five days grant is going to have to send one of you home until just one of you remain and if that person at grant are still here on day 30 you will both split the 250 000 backpack camp all the ones who go home don't get any person unexpected so you could be here for 20 days i did not you're lucky you're guaranteed money you're being rewarded for being a cheater yeah so that was Brad secret Do you know what their secret is yet? Did any of you tell them? I don't know what their secret is. You gave me a pretty heavy weight. All these girls want something out of this, and now I have to take her away, and it's not an easy decision to make. Okay, ladies, the floor is yours. Yeah, we made it this far, so I don't think any of us want to give up. i'm not here to beg to say i think we all are here for a reason let's get him outside whenever you're ready pick up that and choose a wick of these five hearts you're going to break oh my god Oh, whoa! So Grant, tell us, why did you choose to eliminate me? I was back and forth until you made that statement. Being rewarded for being a cheater, isn't that nice? We could talk more about that. Okay. That was the deciding comment. Did you guys make a comment? I wish I had a routine.",
+      "createdAt": "2026-03-08T06:37:32.751Z",
+      "actualStartTime": "2026-03-08T06:37:32.751Z",
+      "isActive": false,
+      "terminatedAt": "2026-03-08T06:44:37.160Z",
+      "transcript": " After the title, I must internationally agree with my $1 on research, we have managed to take a less moneyую and complete division. In this post and process, I learnt based on research and the various projects... we the next one for asking the third student, as weWhat you or zou capacity, I was just a lambed lecture and I said maybe one week long there came a home lot from C Hopkins. Conservancy, I had two students responsibly and I returned here's work, This is very unrujus from theduction See you then. Thanks so much for deciding make sure this will be on the Mars Ankita University of כleistina. Gngu Prof. 30 Gngu Prof. україн supports oh i Yeah At the end of 30 days we flip at You should probably go straight to the other side Nice to see you guys All right I bought a new phone not that I out there I gonna just pretend I out here alone Did anyone have anything nice to say about that? We did like write me a song. They sang me a song. We wrote me a song and then played the tour on the other level. I'm just gonna focus on surviving as best I can out here. Well, I don't like a player call himself. All the X's are awesome. I don't know. I don't know. Guys, don't leave that. We still have a little bit of a conversation. Because of it. We're out keeping it into the night. It takes time to get paid. This is why I think the women are scared. I don't think that's why you're scared. This can't be an end source right now. Yeah, you're about to get this work. So what are you going to do today? Nothing with you. Absolutely nothing to talk. Why are you so mad? Like I'm not afraid to make this work out. How about this and don't be again? I don't want to. I didn't know, but this would be one of the most intense for the history I've ever seen. I'm out there, but there was never a part where I was going to be a part of this. This is one of the most important things. You guys are a little bit like me and I can't stop you. This is your last grand time. How about you? You were the most disgusting man. Yeah, I love you. They've watched a bunch. How was the first time, everybody? Having a great time. Yeah. To celebrate 24 hours in the woods, I have a secret for each side. I'm scared. I'm a figure out every five days. You have to have the ability to sell money around. It's just one left. What I was about to tell you, he has no idea. The secret for the five of you is whatever X's are left at the end can just choose to steal the money from Grant sitting alone with nothing I love that This is kind of awesome On the morning of day three Ray got up next door and immediately got to work in the shelter. As you can imagine, the girls were the first time. Ray, you're on a tent. You don't need to go to the house. You're on a tent. The girl said I don't need to go to the house because I have a tent. I say I'm driving for a month. It's about to get cold. the appeal to camping and i want to say i still don't i don't know how i'll find out that because everyone here works out with us and i take apps for fun jimmy has kind of set this up where i'm having to live in the mess that i've made most people don't get to have all their mistakes in one place for 30 days it's day five mr beast is coming today it is elimination day and i have to choose who i'm sending home come on over there's hard stuff right you're on this side you know where the hammer is oh wow he's gonna hammer apart i'm sorry i'm mad in your life you always got something up your sleeve this one's the ball every five days grant is going to have to send one of you home until just one of you remain and if that person at grant are still here on day 30 you will both split the 250 000 backpack camp all the ones who go home don't get any person unexpected so you could be here for 20 days i did not you're lucky you're guaranteed money you're being rewarded for being a cheater yeah so that was Brad secret Do you know what their secret is yet? Did any of you tell them? I don't know what their secret is. You gave me a pretty heavy weight. All these girls want something out of this, and now I have to take her away, and it's not an easy decision to make. Okay, ladies, the floor is yours. Yeah, we made it this far, so I don't think any of us want to give up. i'm not here to beg to say i think we all are here for a reason let's get him outside whenever you're ready pick up that and choose a wick of these five hearts you're going to break oh my god Oh, whoa! So Grant, tell us, why did you choose to eliminate me? I was back and forth until you made that statement. Being rewarded for being a cheater, isn't that nice? We could talk more about that. Okay. That was the deciding comment. Did you guys make a comment? I wish I had a routine."
+    }
+  ]
+}
