@@ -12,11 +12,18 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (currentUser) {
       // Initialize socket connection
-      const newSocket = io('http://localhost:5000', {
-        transports: ['polling', 'websocket'],
-        reconnectionAttempts: 10,
-        reconnectionDelay: 1000
-      });
+        const backendURL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+        const newSocket = io(backendURL, {
+          transports: ['polling', 'websocket'],
+          reconnectionAttempts: 10,
+          reconnectionDelay: 1000
+        });
+      
+      // const newSocket = io('http://localhost:5000', {
+      //   transports: ['polling', 'websocket'],
+      //   reconnectionAttempts: 10,
+      //   reconnectionDelay: 1000
+      // });
 
       newSocket.on('connect', () => {
         console.log('✅ Connected to Socket.io server, id:', newSocket.id);
