@@ -5,7 +5,7 @@ import { useApp } from './AppContext';
 const SocketContext = createContext();
 
 export const SocketProvider = ({ children }) => {
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000').replace(/\/+$/, '');
   const { currentUser, selectedRoom, setCurrentYoutubeVideo } = useApp();
   const [socket, setSocket] = useState(null);
   const currentRoomRef = useRef(null);
