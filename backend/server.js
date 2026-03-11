@@ -115,12 +115,15 @@ const upload = multer({
 // ============ API ENDPOINTS ============
 
 // Upload endpoint
+
 app.post('/api/upload', upload.single('avatar'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
-  const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+  const BACKEND_URL = process.env.BACKEND_URL || `http://localhost:${PORT}`;
+  const fileUrl = `${BACKEND_URL}/uploads/${req.file.filename}`;
+  //const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
   res.json({
     success: true,
     filename: req.file.filename,
