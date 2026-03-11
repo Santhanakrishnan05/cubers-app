@@ -43,14 +43,6 @@ app.use(cors({
 app.use(express.json());
 
 const httpServer = createServer(app);
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
-const BACKEND_URL = process.env.VITE_BACKEND_URL || `http://localhost:${PORT}`;
-
-app.use(cors({
-  origin: [FRONTEND_URL, 'http://localhost:5173'],
-  credentials: true
-}));
-
 const io = new Server(httpServer, {
   cors: {
     origin: "http://localhost:5173",
@@ -126,7 +118,11 @@ app.post('/api/upload', upload.single('avatar'), (req, res) => {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
+<<<<<<< HEAD
   const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+=======
+  const fileUrl = `${BACKEND_URL}/uploads/${req.file.filename}`;
+>>>>>>> f22b751 (changing the API calls to use environment variable)
   res.json({
     success: true,
     filename: req.file.filename,
