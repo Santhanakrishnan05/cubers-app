@@ -43,11 +43,18 @@ app.use(cors({
 app.use(express.json());
 
 const httpServer = createServer(app);
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+const BACKEND_URL = process.env.VITE_BACKEND_URL || `http://localhost:${PORT}`;
+
+app.use(cors({
+  origin: [FRONTEND_URL, 'http://localhost:5173'],
+  credentials: true
+}));
+
 const io = new Server(httpServer, {
   cors: {
-    origin: [FRONTEND_URL, 'http://localhost:5173'],
-    methods: ["GET", "POST"],
-    credentials: true
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"]
   }
 });
 
@@ -113,12 +120,13 @@ const upload = multer({
 // ============ API ENDPOINTS ============
 
 // Upload endpoint
+
 app.post('/api/upload', upload.single('avatar'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
-  const fileUrl = `${BACKEND_URL}/uploads/${req.file.filename}`;
+  const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
   res.json({
     success: true,
     filename: req.file.filename,
