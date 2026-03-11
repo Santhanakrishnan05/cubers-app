@@ -1,5 +1,35 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000').replace(/\/+$/, '');
+
+const normalizeResourceUrl = (url) => {
+  if (!url || typeof url !== 'string') return url;
+  // Replace localhost with deployed backend URL when running in production
+  if (url.startsWith('http://localhost:5000')) {
+    return `${BACKEND_URL}${url.replace('http://localhost:5000', '')}`;
+  }
+  return url;
+};
+
+const normalizeUser = (user) => ({
+  ...user,
+  avatar: normalizeResourceUrl(user.avatar)
+});
+
+const normalizeRoom = (room) => ({
+  ...room,
+  participants: (room.participants || []).map(normalizeUser),
+  messages: room.messages || [],
+  documents: (room.documents || []).map((doc) => ({
+    ...doc,
+    url: normalizeResourceUrl(doc.url)
+  })),
+  recording: room.recording ? {
+    ...room.recording,
+    url: normalizeResourceUrl(room.recording.url)
+  } : room.recording,
+  summary: room.summary || ''
+});
+
 // Temporary JSON storage
 const initialData = {
   users: [
@@ -130,8 +160,8 @@ export const AppProvider = ({ children }) => {
       .then(([usersResult, roomsResult]) => {
         if (usersResult.success && roomsResult.success) {
           setData({
-            users: usersResult.users,
-            rooms: roomsResult.rooms
+            users: (usersResult.users || []).map(normalizeUser),
+            rooms: (roomsResult.rooms || []).map(normalizeRoom)
           });
         }
       })
