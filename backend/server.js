@@ -33,10 +33,18 @@ if (!GEMINI_API_KEY && !GROQ_API_KEY) {
 
 const app = express();
 const httpServer = createServer(app);
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+
+app.use(cors({
+  origin: [FRONTEND_URL, 'http://localhost:5173'],
+  credentials: true
+}));
+
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"]
+    origin: [FRONTEND_URL, 'http://localhost:5173'],
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 const PORT = 5000;
